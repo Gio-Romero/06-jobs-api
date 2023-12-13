@@ -1,6 +1,6 @@
-const {StatusCodes} = require('http-status-codes')
+const { StatusCodes } = require('http-status-codes')
 const Profile = require('../models/Profile')
-const {BadRequestError, NotFoundError} = require('../errors')
+const { BadRequestError, NotFoundError } = require('../errors')
 
 const getAllProfiles = async (req, res) => {
     res.send('get all profiles')
@@ -12,7 +12,7 @@ const getProfile = async (req, res) => {
 const createProfile = async (req, res) => {
     req.body.createdBy = req.user.userId
     const profile = await Profile.create(req.body)
-    res.status(StatusCodes.CREATED).json({profile})
+    res.status(StatusCodes.CREATED).json({ profile })
 }
 const updateProfile = async (req, res) => {
     res.send('update profile')
