@@ -62,7 +62,7 @@ const deleteProfile = async (req, res) => {
     if (!profile) {
         throw new NotFoundError(`No profile with id ${profileId}`)
     }
-    res.status(StatusCodes.OK).send()
+    res.status(StatusCodes.OK).send({msg:"The entry waas deleted."})
 }
 
 module.exports = {
